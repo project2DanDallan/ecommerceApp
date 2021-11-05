@@ -1,0 +1,22 @@
+@import '_normalize';
+
+/* Page container */
+.container {
+    display: grid;
+    grid-template-columns:1fr calc(min(80ch, 100%)) 1fr;
+}
+.container > * {
+    grid-column: 2;
+}
+.full-bleed {
+    width: 100%;
+    grid-column: 1 / 4;
+}
+
+.header {
+    background-color: blue;
+}
+
+section {
+    background-color: red;
+}
