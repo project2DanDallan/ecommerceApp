@@ -3,20 +3,37 @@
 /* Page container */
 .container {
     display: grid;
-    grid-template-columns:1fr calc(min(80ch, 100%)) 1fr;
+    grid-template-columns:1fr calc(min(1170px, 100%)) 1fr;
 }
-.container > * {
+.container > section {
     grid-column: 2;
 }
-.full-bleed {
-    width: 100%;
+.fullBleed {
+    max-width: 100%;
     grid-column: 1 / 4;
 }
 
 .header {
     background-color: blue;
+    .container {
+        max-width:940px;
+        margin:0 auto;
+    }
 }
 
 section {
     background-color: red;
+    display:flex;
+    .section1 {
+        background:lime;
+        flex:1;
+    }
+    .section2 {
+        background:purple;
+        flex:2;
+    }
+}
+
+.greybg {
+    background:grey;
 }
