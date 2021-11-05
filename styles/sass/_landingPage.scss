@@ -1,0 +1,62 @@
+// General Styling
+
+
+
+//Header of Landing Page
+.featuredProduct {
+    background-color: #E4E4E4;
+    height: 400px;
+    position: relative;
+    .iconContainer {
+        font-size: 22px;
+        height: 100%;
+        position:absolute;
+        top: 0%;
+        display:flex;
+        align-items: center;
+    }
+    .left {
+        left: 2%;
+    }
+
+    .right {
+        right: 2%;
+    }
+    .featuredProductText {
+        margin: 0 auto;
+        width: calc(min(1170px, 100%));
+        display: flex;
+        align-items: center;
+        >* {
+            
+            padding-left: 40px;
+        }
+        h2 {
+            text-align: center;
+        }
+    }
+}
+
+.firstCategory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > *{
+       flex: 1;
+       height: 100%;
+    }
+
+    img {
+        border : 3px yellow solid;
+        width : 60%;
+    }
+}
+
+
+
+
+// footer
+
+footer {
+    text-align: center;
+}

@@ -1,11 +1,12 @@
-@import '_normalize';
+@import 'normalize';
+@import 'landingPage';
 
 /* Page container */
 .container {
     display: grid;
     grid-template-columns:1fr calc(min(1170px, 100%)) 1fr;
 }
-.container > section {
+.container > * {
     grid-column: 2;
 }
 .fullBleed {
