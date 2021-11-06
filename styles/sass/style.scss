@@ -1,4 +1,5 @@
-@import '_normalize';
+@import 'normalize';
+@import 'landingPage';
 
 /* Page container */
 .container {
@@ -101,18 +102,18 @@
     }
 }
 
-section {
-    background-color: red;
-    display:flex;
-    .section1 {
-        background:lime;
-        flex:1;
-    }
-    .section2 {
-        background:purple;
-        flex:2;
-    }
-}
+// section {
+//     background-color: #f0f8ff;
+//     display:flex;
+//     .section1 {
+//         background:lime;
+//         flex:1;
+//     }
+//     .section2 {
+//         background:purple;
+//         flex:2;
+//     }
+// }
 
 .greybg {
     background:grey;

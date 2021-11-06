@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <title>Document</title>
 
@@ -13,8 +14,7 @@
 <body>
     
     <div class="container">
-
-        <header class="fullBleed header">
+      <header class="fullBleed header">
             <div class="container">
                 <a href="index.html" class="logo">
                     Logo
@@ -35,10 +35,111 @@
                 
                 </nav>
             </div>
-        </header>
+       </header>  
+
+       <section class="fullBleed featuredProduct">
+           <div class='featuredProductText'>
+               <div class="textContainer">
+                    <h2>Very cool !</h2>
+                    <p>So cool text about this object that you can definitely Seee!</p>
+                    <div class='buttonContainer'>
+                        <div class='buttonBorder'></div>
+                        <button class='coolLoader'>Buy Now!</button>
+
+                    </div>
+                    <div class='buttonContainer2'>
+                        <button class='pseudoButton'>Buy Now Again!</button>
+                    </div>
+               </div>
+           </div>
+           <div>
+               <div class="iconContainer left">
+                    <i class="fas fa-chevron-left"></i>
+               </div>
+               <div class="iconContainer right">
+                   <i class="fas fa-chevron-right"></i>
+               </div>
+           </div>
+       </section>
+
+        <!-- 1 category per line -->
+        <section class ='firstCategory'>
+            <div class="imgContainer">
+                <img src = 'assets/mensClothing3.png' alt = 'hi'>
+            </div>
+            <div class="textContainer">
+                <p>Men's Clothing</p>
+
+            </div>
+        </section>
+        <!-- 2 categories per line -->
+        <section class= 'secondCategory'>
+            <div class="section1">
+                <div class="imgContainer">
+                    <img src = 'assets/mensClothing3.png' alt = 'hi'>
+                </div>
+                <div class="textContainer">
+                    <p>Men's Clothing</p>
+    
+                </div>
+            </div>
+            <div class="section2">
+                <div class="imgContainer">
+                    <img src = 'assets/mensClothing3.png' alt = 'hi'>
+                </div>
+                <div class="textContainer">
+                    <p>Men's Clothing</p>
+    
+                </div>
+            </div>
+        </section>
+            
 
        
-        <script>
+       
+    
+
+        
+        <section class='thirdCategory'>
+            <div class="section3">
+                <div class="imgContainer">
+                    <img src = 'assets/mensClothing3.png' alt = 'hi'>
+                </div>
+                <div class="textContainer">
+                    <p>Men's Clothing</p>
+    
+                </div>
+            </div>
+
+            <div class="section4And5">
+                <div class="section4">
+                    <div class="imgContainer">
+                        <img src = 'assets/mensClothing3.png' alt = 'hi'>
+                    </div>
+                    <div class="textContainer">
+                        <p>Men's Clothing</p>
+        
+                    </div>
+
+                </div>
+                <div class="section5">
+                    <div class="imgContainer">
+                        <img src = 'assets/mensClothing3.png' alt = 'hi'>
+                    </div>
+                    <div class="textContainer">
+                        <p>Men's Clothing</p>
+        
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <footer class= 'fullBleed'>
+            <p>Created at Juno College 2021</p>
+        </footer>
+    </div>
+  
+   <script>
             // store nav link ids in variable
             const nav = document.getElementById("navLink");
             const navMenuItems = document.getElementById("navMenu");
@@ -106,40 +207,7 @@
             console.log(ecommerceApp.products[1].title)
         </script>
 
-        <!-- <section>
-            <div class="section1">sadasdasd</div>
-            <div class="section2">sadasdasd</div>
-        </section>
 
-        <section>
-            <div class="section1">sadasdasd</div>
-            <div class="section2">sadasdasd</div>
-        </section> -->
-
-        
-
-    </div>
-
-
-    <!-- <script>
-        fetch("https://axesso-axesso-amazon-data-service-v1.p.rapidapi.com/amz/amazon-lookup-product?url=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB09938DVH2", {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "axesso-axesso-amazon-data-service-v1.p.rapidapi.com",
-                "x-rapidapi-key": "of55b4f960mshb8e71f2301234a9p1f3362jsnde7975f7e67f"
-            }     
-        })
-        .then(response => {
-            console.log(response);
-        })
-        .catch(err => {
-            console.log(err);
-        })
-        
-        fetch('https://fakestoreapi.com/products')
-            .then(res=>res.json())
-            .then(json=>console.log(json))
-    </script> -->
-
+    <script src='landingPage.js'></script>
 </body>
 </html>
