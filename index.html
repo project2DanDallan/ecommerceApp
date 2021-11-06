@@ -5,19 +5,108 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <title>Document</title>
+
+    <script src="./scripts/init.js"></script> <!-- app call init -->
 </head>
 <body>
     
     <div class="container">
 
-        <header class="full-bleed header">
-            Header
+        <header class="fullBleed header">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    Logo
+                </a>
+                <nav class="nav">
+                    <div class="icon" id="navLink"><i id="navIcon" class="fas fa-bars"></i>
+                        <div id="navMenu" class="menu navMenu">
+                            <a href="#">Home</a>
+                            <a href="#">Products</a>
+                        </div>
+                    </div>
+                        
+                    
+                    <div class="icon" id="cartLink"><i id="cartIcon" class="fas fa-shopping-bag"></i></div>
+                        <div id="cartMenu" class="menu cartMenu">
+                            <span>Shopping cart is empty</span>
+                        </div>
+                
+                </nav>
+            </div>
         </header>
 
        
+        <script>
+            // store nav link ids in variable
+            const nav = document.getElementById("navLink");
+            const navMenuItems = document.getElementById("navMenu");
 
-        <section>
+            const cart = document.getElementById("cartLink");
+            const cartMenuItems = document.getElementById("cartMenu");
+
+
+            nav.navStatus = "off";
+            cart.cartStatus = "off";
+
+            // click events for the nav links
+            nav.addEventListener('click', function() {
+                switch(nav.navStatus) {
+                    case "off":
+                        nav.navStatus = "on";
+                        document.getElementById("navIcon").classList.add('fa-times');
+                        document.getElementById("navIcon").classList.remove('fa-bars');
+                        navMenuItems.classList.add('flex');
+
+                        // turn off cart menu
+                        cartMenuItems.classList.remove('flex');
+                        cart.cartStatus = "off";
+                        document.getElementById("cartIcon").classList.remove('fa-times');
+                        document.getElementById("cartIcon").classList.add('fa-shopping-bag');
+
+                        break;
+                    case "on":
+                        nav.navStatus = "off";
+                        document.getElementById("navIcon").classList.remove('fa-times');
+                        document.getElementById("navIcon").classList.add('fa-bars');
+                        navMenuItems.classList.remove('flex');
+                        break;
+                }
+            });
+
+            cart.addEventListener('click', function() {
+                switch(cart.cartStatus) {
+                    case "off":
+                        cart.cartStatus = "on";
+                        document.getElementById("cartIcon").classList.add('fa-times');
+                        document.getElementById("cartIcon").classList.remove('fa-shopping-bag');
+                        cartMenuItems.classList.add('flex');
+
+                        // turn off nav menu
+                        navMenuItems.classList.remove('flex');
+                        nav.navStatus = "off";
+                        document.getElementById("navIcon").classList.remove('fa-times');
+                        document.getElementById("navIcon").classList.add('fa-bars');
+
+                        break;
+                    case "on":
+                        cart.cartStatus = "off";
+                        document.getElementById("cartIcon").classList.remove('fa-times');
+                        document.getElementById("cartIcon").classList.add('fa-shopping-bag');
+                        cartMenuItems.classList.remove('flex');
+                        break;
+                }
+            });
+
+            // ecommerceApp.consoleLog = function() {
+            //     console.log(ecommerceApp.products[1].title)
+                
+            // }
+            console.log(ecommerceApp.products[1].title)
+        </script>
+
+        <!-- <section>
             <div class="section1">sadasdasd</div>
             <div class="section2">sadasdasd</div>
         </section>
@@ -25,7 +114,7 @@
         <section>
             <div class="section1">sadasdasd</div>
             <div class="section2">sadasdasd</div>
-        </section>
+        </section> -->
 
         
 
