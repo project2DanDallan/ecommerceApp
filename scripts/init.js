@@ -8,7 +8,8 @@ ecommerceApp.callApi = () => {
         .then(res=>res.json())
         .then(json=> {
             ecommerceApp.products = json;
-
+            
+            ecommerceApp.consoleLog()
             
             
         })

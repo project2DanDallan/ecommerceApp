@@ -12,7 +12,6 @@
     <script src="./scripts/init.js"></script> <!-- app call init -->
 </head>
 <body>
-    
     <div class="container">
       <header class="fullBleed header">
             <div class="container">
@@ -48,7 +47,7 @@
 
                     </div>
                     <div class='buttonContainer2'>
-                        <button class='pseudoButton'>Buy Now Again!</button>
+                        <button class='pseudoButton'>SHOP NOW!</button>
                     </div>
                </div>
            </div>
@@ -62,19 +61,15 @@
            </div>
        </section>
 
-        <!-- 1 category per line -->
-        <section class ='firstCategory'>
-            <div class="imgContainer">
-                <img src = 'assets/mensClothing3.png' alt = 'hi'>
-            </div>
-            <div class="textContainer">
-                <p>Men's Clothing</p>
+       <div class='h2Container'>
+           <h2> FEATURED CATEGORIES</h2>
 
-            </div>
-        </section>
+       </div>
+
+        
         <!-- 2 categories per line -->
-        <section class= 'secondCategory'>
-            <div class="section1">
+        <!-- <section class= 'secondCategory'>
+            <div class="section1 categoryLink" id = 'mensClothing'>
                 <div class="imgContainer">
                     <img src = 'assets/mensClothing3.png' alt = 'hi'>
                 </div>
@@ -83,62 +78,113 @@
     
                 </div>
             </div>
-            <div class="section2">
-                <div class="imgContainer">
-                    <img src = 'assets/mensClothing3.png' alt = 'hi'>
-                </div>
+            <div class="section2 categoryLink" id = 'womansClothing'>
                 <div class="textContainer">
                     <p>Men's Clothing</p>
     
                 </div>
+                <div class="imgContainer">
+                    <img src = 'assets/mensClothing3.png' alt = 'hi'>
+                </div>
+                
+            </div>
+        </section> -->
+
+        <!-- Second attempt -->
+        <section class= 'testCategory' >
+            <div class="section1 categoryLink" id ='mensClothing'>
+                <img class='left' src="assets/womanClothing.webp" alt="">
+                
+                <p>Shop Now!</p>
+            </div>
+            <div class="section2 categoryLink" id ='womansClothing'>
+
+                <img class='right' src="assets/panoramicTest.jpg" alt="">
+
+            </div>
+        </section>   
+        
+        <div class='h2Container'>
+            <h2> Products</h2>
+        </div>
+
+        <section class='galleryGrid'>
+            <div class="gridItem1">
+                <img src= 'assets/computer.jpg'>
+                <p class='computerText'>ELECTRONICS</p>
+            </div>
+            <div class="gridItem">
+                <img src="assets/usb.jpg" alt="">
+
+            </div>
+            <div class="gridItem">
+                <img src="assets/headset.jpg" alt="">
+            </div>
+            <!-- <div class="gridItem2">gridItem4</div>
+            <div class="gridItem2">gridItem5</div> -->
+            <div class="gridItem1">
+                <img src="assets/blueRing.webp" alt="">
+                <p class='computerText'>JEWELERY</p>
+            </div>
+            <div class="gridItem">
+                <img src="assets/necklace.jpg" alt="">
+            </div>
+            <div class="gridItem">
+                <img src="assets/barrette.webp" alt="">
             </div>
         </section>
-            
 
-       
-       
-    
+        <div class='h2Container'>
+            <h2> New Releases</h2>
+        </div>
 
-        
-        <section class='thirdCategory'>
-            <div class="section3">
-                <div class="imgContainer">
-                    <img src = 'assets/mensClothing3.png' alt = 'hi'>
-                </div>
-                <div class="textContainer">
-                    <p>Men's Clothing</p>
-    
-                </div>
+        <section class='newReleases'>
+            <!-- <div class="gridItem2">
+                <img src="" alt="">
             </div>
-
-            <div class="section4And5">
-                <div class="section4">
-                    <div class="imgContainer">
-                        <img src = 'assets/mensClothing3.png' alt = 'hi'>
-                    </div>
-                    <div class="textContainer">
-                        <p>Men's Clothing</p>
-        
-                    </div>
-
-                </div>
-                <div class="section5">
-                    <div class="imgContainer">
-                        <img src = 'assets/mensClothing3.png' alt = 'hi'>
-                    </div>
-                    <div class="textContainer">
-                        <p>Men's Clothing</p>
-        
-                    </div>
-
-                </div>
+            <div class="gridItem2">
+                <img src="" alt="">
             </div>
+            <div class="gridItem2">
+                <img src="" alt="">
+            </div> -->
         </section>
-        <footer class= 'fullBleed'>
+
+
+
+        <footer class='fullBleed'>
+            <ul>
+                <li>Frequently Asked Questions</li>
+                <li>Contact Us</li>
+                <li>Very Cool Link Please Click</li>
+                <li>Who are we and Why are we so Cool!</li>
+            </ul>
+
+            <ul>
+                <li>Our Story</li>
+                <li>Our employees</li>
+                <li>find our stores</li>
+                <li>Something else</li>
+            </ul>
+
+            <form class= 'formFlex'>
+                <div class="formContainer">
+                    <label  class = 'sr-only' for="email">Email</label>
+                    <input type="email" name = 'email' placeholder = ' Your Email address' id='email'>
+                </div>
+                <button type='submit'>Sign Up For Our NewsLetter</button>
+            </form>
+
+
+
             <p>Created at Juno College 2021</p>
+
+
+            
         </footer>
     </div>
-  
+    
+    
    <script>
             // store nav link ids in variable
             const nav = document.getElementById("navLink");
@@ -200,14 +246,18 @@
                 }
             });
 
-            // ecommerceApp.consoleLog = function() {
-            //     console.log(ecommerceApp.products[1].title)
+            ecommerceApp.consoleLog = function() {
+                console.log(ecommerceApp.products)
+                console.log(ecommerceApp.products[1].title)
+
+                ecommerceApp.addLinks()
+                ecommerceApp.displayNewReleases()
                 
-            // }
-            console.log(ecommerceApp.products[1].title)
+            }
+            // console.log(ecommerceApp.products[1].title)
         </script>
 
-
+    
     <script src='landingPage.js'></script>
 </body>
 </html>
