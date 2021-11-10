@@ -11,32 +11,56 @@
 
     <script src="./scripts/init.js"></script> <!-- app call init -->
 </head>
-<body>
+<body class="landingPage">
     <div class="container">
-      <header class="fullBleed header">
-            <div class="container">
-                <a href="index.html" class="logo">
-                    Logo
-                </a>
-                <nav class="nav">
-                    <div class="icon" id="navLink"><i id="navIcon" class="fas fa-bars"></i>
-                        <div id="navMenu" class="menu navMenu">
-                            <a href="#">Home</a>
-                            <a href="#">Products</a>
-                        </div>
-                    </div>
-                        
-                    
-                    <div class="icon" id="cartLink"><i id="cartIcon" class="fas fa-shopping-bag"></i></div>
-                        <div id="cartMenu" class="menu cartMenu">
-                            <span>Shopping cart is empty</span>
-                        </div>
-                
-                </nav>
-            </div>
-       </header>  
 
-       <section class="fullBleed featuredProduct">
+        <!-- header and menus -->
+        <header class="fullBleed topbar">
+            
+            <div class="icon" id="navLink"><i id="navIcon" class="fas fa-bars"></i></div>
+            <div id="navMenu" class="menu navMenu">
+                
+                <div class="menuContent">
+
+                    <div>
+                        <div class="icon" id="navMenuLink"><i id="navIcon" class="fas fa-times"></i></div>
+                    </div>
+
+                    <div>
+                        <a href="#">HOME</a>
+                        <a href="#">PRODUCTS</a>
+                    </div>
+
+                </div>
+                <div class="menuOverlay" id="navMenuOverlay"></div>
+            </div>
+            
+
+            <div>Logo</div>
+            
+            <div class="icon" id="cartLink"><i id="cartIcon" class="fas fa-shopping-bag"></i></div>
+            <div id="cartMenu" class="menu cartMenu">
+                <div class="menuContent">
+                    
+                    <div>
+                        <div class="icon" id="cartMenuLink"><i id="cartIcon" class="fas fa-times"></i></div>
+                    </div>
+
+                    <div>
+                        <span>Shopping cart is empty</span>
+                    </div>
+            
+                </div>
+                <div class="menuOverlay order" id="cartMenuOverlay"></div>
+
+            </div>
+            
+        </header>
+
+    </div>
+
+    <div class="container">
+       <article class="fullBleed featuredProduct">
            <div class='featuredProductText'>
                <div class="textContainer">
                     <h2>Very cool !</h2>
@@ -59,7 +83,7 @@
                    <i class="fas fa-chevron-right"></i>
                </div>
            </div>
-       </section>
+       </article>
 
        <div class='h2Container'>
            <h2> FEATURED CATEGORIES</h2>
@@ -92,12 +116,12 @@
 
         <!-- Second attempt -->
         <section class= 'testCategory' >
-            <div class="section1 categoryLink" id ='mensClothing'>
+            <div class="section1 categoryLink" id="men's clothing">
                 <img class='left' src="assets/womanClothing.webp" alt="">
                 
                 <p>Shop Now!</p>
             </div>
-            <div class="section2 categoryLink" id ='womansClothing'>
+            <div class="section2 categoryLink" id="women's clothing">
 
                 <img class='right' src="assets/panoramicTest.jpg" alt="">
 
@@ -186,65 +210,6 @@
     
     
    <script>
-            // store nav link ids in variable
-            const nav = document.getElementById("navLink");
-            const navMenuItems = document.getElementById("navMenu");
-
-            const cart = document.getElementById("cartLink");
-            const cartMenuItems = document.getElementById("cartMenu");
-
-
-            nav.navStatus = "off";
-            cart.cartStatus = "off";
-
-            // click events for the nav links
-            nav.addEventListener('click', function() {
-                switch(nav.navStatus) {
-                    case "off":
-                        nav.navStatus = "on";
-                        document.getElementById("navIcon").classList.add('fa-times');
-                        document.getElementById("navIcon").classList.remove('fa-bars');
-                        navMenuItems.classList.add('flex');
-
-                        // turn off cart menu
-                        cartMenuItems.classList.remove('flex');
-                        cart.cartStatus = "off";
-                        document.getElementById("cartIcon").classList.remove('fa-times');
-                        document.getElementById("cartIcon").classList.add('fa-shopping-bag');
-
-                        break;
-                    case "on":
-                        nav.navStatus = "off";
-                        document.getElementById("navIcon").classList.remove('fa-times');
-                        document.getElementById("navIcon").classList.add('fa-bars');
-                        navMenuItems.classList.remove('flex');
-                        break;
-                }
-            });
-
-            cart.addEventListener('click', function() {
-                switch(cart.cartStatus) {
-                    case "off":
-                        cart.cartStatus = "on";
-                        document.getElementById("cartIcon").classList.add('fa-times');
-                        document.getElementById("cartIcon").classList.remove('fa-shopping-bag');
-                        cartMenuItems.classList.add('flex');
-
-                        // turn off nav menu
-                        navMenuItems.classList.remove('flex');
-                        nav.navStatus = "off";
-                        document.getElementById("navIcon").classList.remove('fa-times');
-                        document.getElementById("navIcon").classList.add('fa-bars');
-
-                        break;
-                    case "on":
-                        cart.cartStatus = "off";
-                        document.getElementById("cartIcon").classList.remove('fa-times');
-                        document.getElementById("cartIcon").classList.add('fa-shopping-bag');
-                        cartMenuItems.classList.remove('flex');
-                        break;
-                }
-            });
 
             ecommerceApp.consoleLog = function() {
                 console.log(ecommerceApp.products)
@@ -257,7 +222,7 @@
             // console.log(ecommerceApp.products[1].title)
         </script>
 
-
+    <script src='./scripts/header.js'></script>
     <script src='landingPage.js'></script>
 </body>
 </html>

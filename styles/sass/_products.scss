@@ -1,0 +1,42 @@
+section.products {
+
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    gap:1em;
+
+    .filterPanel {
+        // background:blue;
+        // position:relative;
+        .filterSettings {
+            border-radius: 10px;
+            background-color: #ccc;
+            // position: fixed;
+        }
+    }
+
+    
+
+    .productListings {
+        display:grid;
+    grid-template-columns: repeat(3,1fr);
+    background:palegreen;
+    gap:1em;
+    padding:1em;
+
+    div {
+        background-color: paleturquoise;
+        padding:1em;
+    }
+    }
+
+
+    .filterSettings {
+        div.ratings {
+            color:#333;
+            .checked {
+                color:goldenrod;
+            }
+        }
+    }
+    
+}

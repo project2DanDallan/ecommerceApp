@@ -10,7 +10,7 @@ ecommerceApp.addLinks = () => {
 
             const id = item.id
             console.log(id)
-            window.location.assign(`gallery.html?category=${id}`)
+            window.location.assign(`products.html?category=${id}`)
         })
     })
 }

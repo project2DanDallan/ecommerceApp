@@ -65,7 +65,7 @@
 
     <div class="container">
 
-        <div class="testbg"></div>
+        <aside class="testbg"></aside>
 
         <!-- product details -->
         <section class="product">
@@ -96,21 +96,21 @@
             </article>
 
         </section>
-        <div class="testbg"></div>
+        <aside class="testbg"></aside>
 
-        <div class="relatedProductsBG"></div>
+        <aside class="relatedProductsBG"></aside>
         <section class="relatedProducts">
             
             <h2>Related products</h2>
 
-            <div class="products" id="relatedProducts">
+            <div class="products" id="productListings">
                 <!-- <div>1</div>
                 <div>2</div>
                 <div>3</div> -->
             </div>
 
         </section>
-        <div class="relatedProductsBG"></div>
+        <aside class="relatedProductsBG"></aside>
 
         <footer class= 'fullBleed'>
             <p>Created at Juno College 2021</p>
@@ -172,7 +172,7 @@
                         
                         // related products
                         ecommerceApp.productsByCategory = []; // store all products with specified category
-                        ecommerceApp.relatedProducts = []; // store limited number of products with specified category
+                        ecommerceApp.productListings = []; // store limited number of products with specified category
 
                         // iterate through products array
                         for(let i = 0 ; i < ecommerceApp.products.length ; i++) {
@@ -185,56 +185,14 @@
                         // remove the product thats currently being viewed out of related products
 
                         // randomize the productsByCategory array and take the first 3 objects
-                        ecommerceApp.relatedProducts = ecommerceApp.productsByCategory
+                        ecommerceApp.productListings = ecommerceApp.productsByCategory
                         .map(x => ({ x, r: Math.random() }))
                         .sort((a, b) => a.r - b.r)
                         .map(a => a.x)
                         .slice(0, 3);
 
-                        // echo the related product cards
-                        ecommerceApp.relatedProducts.forEach((elem, index) => {
-                            
-                            // select #relatedProducts container
-                            const relatedProducts = document.querySelector('#relatedProducts');
-                            
-                            // product card container
-                            const cardContainer = document.createElement('div'); 
-
-                            // create anchor link around card content
-                            const cardLink = document.createElement('a')
-                            cardLink.href = `./products.html?id=${elem.id}`;
-
-                            // product card image container
-                            const cardImageContainer = document.createElement('div');     
-                            
-                            // product card image
-                            const cardImage = document.createElement('img');
-                            cardImage.src = elem.image;
-                            cardImage.alt = elem.description;
-                            cardImageContainer.classList.add('productImage');
-                            cardImageContainer.appendChild(cardImage);
-                            
-                            // product card title
-                            const cardTitle = document.createElement('div');
-                            cardTitle.classList.add('productTitle');
-                            cardTitle.innerText = elem.title;
-                            
-                            // product card price
-                            const cardPrice = document.createElement('div');
-                            cardPrice.classList.add('productPrice');
-                            cardPrice.innerText = elem.price;
-
-                            // appending the newly created elements to the card containers
-                            cardLink.appendChild(cardImageContainer);
-                            cardImageContainer.appendChild(cardImage)
-                            cardLink.appendChild(cardTitle)
-                            cardLink.appendChild(cardPrice)
-
-                            cardContainer.appendChild(cardLink);
-                            // appending the newly created elements to to related products container
-                            relatedProducts.appendChild(cardContainer);
-                        });
-
+                        ecommerceApp.displayProducts(ecommerceApp.productListings, ecommerceApp.products[index].category);
+                    
                     } else {
                         // redirect to 404 page
                         ecommerceApp.redirect('404');

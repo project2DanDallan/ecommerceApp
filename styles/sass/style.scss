@@ -2,13 +2,14 @@
 @import 'landingPage';
 @import 'product';
 @import 'header';
+@import 'products';
 
 /* Page container */
 .container {
     display: grid;
     grid-template-columns:1fr calc(min(1170px, 100%)) 1fr;
 }
-.container > section {
+.container > section, .container > div {
     grid-column: 2;
 }
 .fullBleed {
@@ -89,10 +90,8 @@ header.topbar {
     .menu {
         width:100%;
         position: fixed;
-        
-
         top:0;
-        z-index: 1;
+        z-index: 100;
         font-size:1.5rem;
         
         animation-duration: 300ms;

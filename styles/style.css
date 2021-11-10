@@ -212,17 +212,26 @@ a {
   color: inherit;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
 
-body {
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+body.landingPage {
   background-color: mintcream;
   background-image: -webkit-linear-gradient(-80deg, mintcream 50%, #FFFAFA 50%);
 }
 
-
-
 img {
-  display: block;
   max-width: 100%;
+  height: 100%;
+  display: block;
+  margin: auto;
 }
 
 .featuredProduct {
@@ -632,7 +641,6 @@ footer p {
           flex: 5;
 }
 
-
 .testCategory .section1 {
   -webkit-clip-path: polygon(0 0, calc(100% - 7vh) 0, 100% 100%, 0 100%);
           clip-path: polygon(0 0, calc(100% - 7vh) 0, 100% 100%, 0 100%);
@@ -640,7 +648,34 @@ footer p {
 .testCategory .section2 {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, calc(0% + 7vh) 100%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, calc(0% + 7vh) 100%);
+}
 
+section.products {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1em;
+}
+section.products .filterPanel .filterSettings {
+  border-radius: 10px;
+  background-color: #ccc;
+}
+section.products .productListings {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: palegreen;
+  gap: 1em;
+  padding: 1em;
+}
+section.products .productListings div {
+  background-color: paleturquoise;
+  padding: 1em;
+}
+section.products .filterSettings div.ratings {
+  color: #333;
+}
+section.products .filterSettings div.ratings .checked {
+  color: goldenrod;
+}
 
 /* Page container */
 .container {
@@ -648,7 +683,7 @@ footer p {
   grid-template-columns: 1fr calc(min(1170px, 100%)) 1fr;
 }
 
-.container > section {
+.container > section, .container > div {
   grid-column: 2;
 }
 
@@ -713,7 +748,7 @@ header.topbar .menu {
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 100;
   font-size: 1.5rem;
   -webkit-animation-duration: 300ms;
           animation-duration: 300ms;
@@ -828,7 +863,6 @@ i.fa-times:hover {
     opacity: 0.5;
   }
 }
-
 section.product {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
