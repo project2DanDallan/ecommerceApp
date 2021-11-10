@@ -8,6 +8,12 @@ ecommerceApp.products = '';
 ecommerceApp.displayedProducts = []; // empty array to manipulate by filtering results on products.html
 ecommerceApp.filterProductsByRating = [];
 
+// Default parameters for filtering
+ecommerceApp.currentFilter =  {
+    currentRating : 0,
+    currentPrice: 110000
+}
+
 // fetch and store data using api call
 ecommerceApp.callApi = () => {
     fetch(ecommerceApp.url)
@@ -100,7 +106,7 @@ ecommerceApp.displayProducts = function(productArray, getUrl = null) {
         // product card rating
         const cardRating = document.createElement('div');
         cardRating.classList.add('productRating');
-        cardRating.innerText = elem['rating'].rate;
+        cardRating.innerText = `${elem['rating'].rate} (${elem['rating'].count} reviews)`;
         
         // product card price
         const cardPrice = document.createElement('div');
@@ -122,9 +128,14 @@ ecommerceApp.displayProducts = function(productArray, getUrl = null) {
     
 }
 
+
 //testing purposes for sorting our new array
-ecommerceApp.filterByRating = function (array, rating) {
+ecommerceApp.filterByRating = function (array, rating, price) {
+
+    ecommerceApp.currentFilter.currentPrice = price;
+    ecommerceApp.currentFilter.currentRating = rating;
     
+
     ecommerceApp.filterProductsByRating = [];
 
     // filter array if product rating is greater than target rating
@@ -135,8 +146,17 @@ ecommerceApp.filterByRating = function (array, rating) {
     // remove any duplicated array items
     ecommerceApp.filteredByRating = ecommerceApp.removeDuplicates(ecommerceApp.filterProductsByRating,'id');
 
+    //with the filtered array by rating, filter again by price indicated
+    ecommerceApp.filterProductsByPrice = ecommerceApp.filteredByRating.filter( (product) => {
+        return product.price <= price;
+    });
+
+    // sort the remaining elements in the array by rating : highest - lowest
+    ecommerceApp.filterProductsByPrice.sort((a, b) => a.rating.rate < b.rating.rate)
+
+
     // display products on the page
-    ecommerceApp.displayProducts(ecommerceApp.filteredByRating)
+    ecommerceApp.displayProducts(ecommerceApp.filterProductsByPrice)
 
 }
 
