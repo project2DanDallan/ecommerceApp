@@ -13,6 +13,9 @@ ecommerceApp.callApi = () => {
         .then(json=> {
             ecommerceApp.products = json;
 
+            
+            ecommerceApp.consoleLog()
+            
             // if user is on product.html
             if(typeof ecommerceApp.checkProduct === "function") {
                 // run the function only if function exists
