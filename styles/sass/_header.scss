@@ -1,0 +1,80 @@
+// .header {
+//     background-color: #ccc;
+    
+//     .container {
+//         display:flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         .logo {
+//             flex:2;
+//             font-size:32px;
+//             margin-left:1em;
+//         }
+//         .nav {
+//             display:flex;
+//             justify-content: flex-end;
+//             position:relative;
+//             height:80px;
+//             flex:1;
+//             background:blue;
+//             .icon {
+//                 width:50%;
+//                 display:flex;
+//                 align-items: center;
+//                 justify-content: center;
+//                 background:grey;
+//                 font-size: 1.5rem;
+//                 cursor: pointer;
+                
+//             }
+//             .icon:hover {
+//                 background:#ccc;
+//             }
+//             .fa-times {
+//                 animation-name: fadeIn;
+//                 animation-duration: 3s;
+//                 animation-fill-mode: forwards;
+//             }
+//             .navMenu, .cartMenu {
+//                 display:none;
+//             }
+//             .flex { 
+//                 display:flex;
+//             }
+//             .menu {
+//                 width:100%;
+//                 position: absolute;
+//                 background-color: #f1f1f1;
+//                 right:0;
+//                 top:80px;
+//                 z-index: 1;
+
+//                 flex-direction: column;
+//                 animation-name: slideInFromTop;
+//                 animation-duration: 2s, 2s;
+//                 animation-fill-mode: forwards;
+//                 opacity:0;
+//                 color: #f1f1f1;
+//                 padding:1.5em;
+
+//                 a, span {
+//                     margin-bottom:.5em;
+//                 }
+//             }
+//         }
+        
+//     }
+// }
+
+// @keyframes slideInFromTop {
+//     0% {
+//         height: 0;
+//     }
+//     100% {
+//         height: calc(100vh - 80px);
+//         flex-grow:1;
+//         opacity: 1;
+//         color:black;
+//     }
+// }
+

@@ -212,16 +212,17 @@ a {
   color: inherit;
 }
 
+
 body {
   background-color: mintcream;
   background-image: -webkit-linear-gradient(-80deg, mintcream 50%, #FFFAFA 50%);
 }
 
+
+
 img {
-  max-width: 100%;
-  height: 100%;
   display: block;
-  margin: auto;
+  max-width: 100%;
 }
 
 .featuredProduct {
@@ -631,6 +632,7 @@ footer p {
           flex: 5;
 }
 
+
 .testCategory .section1 {
   -webkit-clip-path: polygon(0 0, calc(100% - 7vh) 0, 100% 100%, 0 100%);
           clip-path: polygon(0 0, calc(100% - 7vh) 0, 100% 100%, 0 100%);
@@ -638,7 +640,7 @@ footer p {
 .testCategory .section2 {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, calc(0% + 7vh) 100%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, calc(0% + 7vh) 100%);
-}
+
 
 /* Page container */
 .container {
@@ -646,7 +648,7 @@ footer p {
   grid-template-columns: 1fr calc(min(1170px, 100%)) 1fr;
 }
 
-.container > * {
+.container > section {
   grid-column: 2;
 }
 
@@ -655,124 +657,159 @@ footer p {
   grid-column: 1/4;
 }
 
-.header {
-  background-color: #ccc;
+.testbg {
+  background: white;
 }
-.header .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+
+/* header stuff */
+header.topbar {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr 12fr 1fr;
+  justify-items: center;
+  font-size: 3rem;
 }
-.header .container .logo {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
-  font-size: 32px;
-  margin-left: 1em;
-}
-.header .container .nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  position: relative;
-  height: 80px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  background: blue;
-}
-.header .container .nav .icon {
-  width: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background: grey;
-  font-size: 1.5rem;
+header.topbar .icon {
+  color: #303259;
+  font-size: 4rem;
   cursor: pointer;
+  text-align: center;
 }
-.header .container .nav .icon:hover {
-  background: #ccc;
+header.topbar .icon:hover {
+  color: black;
 }
-.header .container .nav .fa-times {
-  -webkit-animation-name: fadeIn;
-          animation-name: fadeIn;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+header.topbar .navMenu, header.topbar .cartMenu {
+  display: none;
+}
+header.topbar .navMenu {
+  left: 0;
+  -webkit-animation-name: slideInFromLeft;
+          animation-name: slideInFromLeft;
+}
+header.topbar .cartMenu {
+  right: 0;
+  -webkit-animation-name: slideInFromRight;
+          animation-name: slideInFromRight;
+}
+header.topbar .cartMenu .menuContent div:first-child {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+header.topbar .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+header.topbar .animation {
+  -webkit-animation-name: slideInFromLeft;
+          animation-name: slideInFromLeft;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
-.header .container .nav .navMenu, .header .container .nav .cartMenu {
-  display: none;
+header.topbar .menu {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  font-size: 1.5rem;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  height: 100%;
 }
-.header .container .nav .flex {
+header.topbar .menu .menuContent {
+  background: turquoise;
+  width: 50%;
+  padding: 2em;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  text-align: left;
+}
+header.topbar .menu .menuContent div:nth-child(2) {
+  font-family: "DM Sans", sans-serif;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-.header .container .nav .menu {
-  width: 100%;
-  position: absolute;
-  background-color: #f1f1f1;
-  right: 0;
-  top: 80px;
-  z-index: 1;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-animation-name: slideInFromTop;
-          animation-name: slideInFromTop;
-  -webkit-animation-duration: 2s, 2s;
-          animation-duration: 2s, 2s;
+  color: white;
+  font-size: 2em;
+}
+header.topbar .menu .menuOverlay {
+  width: 50%;
+  background-color: #303259;
+  opacity: 0;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  opacity: 0;
-  color: #f1f1f1;
-  padding: 1.5em;
 }
-.header .container .nav .menu a, .header .container .nav .menu span {
+header.topbar .menu .order {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+header.topbar .menu a, header.topbar .menu span {
   margin-bottom: 0.5em;
 }
 
-@-webkit-keyframes slideInFromTop {
+i.fa-times {
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+}
+
+i.fa-times:hover {
+  color: white;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+@-webkit-keyframes slideInFromLeft {
   0% {
-    height: 0;
+    left: -100%;
   }
   100% {
-    height: calc(100vh - 80px);
-    -webkit-box-flex: 1;
-            flex-grow: 1;
-    opacity: 1;
-    color: black;
+    left: 0;
   }
 }
 
-@keyframes slideInFromTop {
+@keyframes slideInFromLeft {
   0% {
-    height: 0;
+    left: -100%;
   }
   100% {
-    height: calc(100vh - 80px);
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    opacity: 1;
-    color: black;
+    left: 0;
+  }
+}
+@-webkit-keyframes slideInFromRight {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
   }
 }
 @-webkit-keyframes fadeIn {
@@ -780,7 +817,7 @@ footer p {
     opacity: 0;
   }
   100% {
-    opacity: 1;
+    opacity: 0.5;
   }
 }
 @keyframes fadeIn {
@@ -788,9 +825,79 @@ footer p {
     opacity: 0;
   }
   100% {
-    opacity: 1;
+    opacity: 0.5;
   }
 }
+
+section.product {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3em;
+  padding: 2em;
+}
+section.product article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+section.product article * {
+  margin: 0.5em 0;
+}
+section.product article .productDesc {
+  letter-spacing: 1px;
+  line-height: 1.5rem;
+}
+section.product button.addTo {
+  border: none;
+  padding: 1em 2em;
+  background: #999;
+  cursor: pointer;
+}
+section.product button.addTo:hover {
+  background: #ccc;
+}
+
+section.relatedProducts {
+  background: #ccc;
+}
+section.relatedProducts h2 {
+  text-align: center;
+}
+section.relatedProducts .products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  padding: 1em;
+}
+section.relatedProducts .products div {
+  background: white;
+  padding: 1em;
+  border-radius: 10px;
+}
+section.relatedProducts .products div .productTitle {
+  font-size: 1.25rem;
+}
+section.relatedProducts .products div .productImage {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+section.relatedProducts .products div .productImage img {
+  max-height: 100%;
+}
+
+.relatedProductsBG {
+  background-color: #ccc;
+}
+
 .greybg {
   background: grey;
 }
