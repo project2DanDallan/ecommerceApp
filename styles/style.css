@@ -676,6 +676,9 @@ section.products .filterSettings div.ratings {
 section.products .filterSettings div.ratings .checked {
   color: goldenrod;
 }
+section.products .filterSettings .underline {
+  border: 2px orange solid;
+}
 
 /* Page container */
 .container {

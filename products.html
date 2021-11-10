@@ -87,7 +87,7 @@
                     <h3>By rating</h3>
 
                     <!-- 4 stars and up -->
-                    <div class="ratings" id="rating4">
+                    <div class="ratings" id="4">
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -97,7 +97,7 @@
                     </div>
 
                     <!-- 3 stars and up -->
-                    <div class="ratings" id="rating3">
+                    <div class="ratings" id="3">
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -107,7 +107,7 @@
                     </div>
 
                     <!-- 2 stars and up -->
-                    <div class="ratings" id="rating2">
+                    <div class="ratings" id="2">
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star"></span>
@@ -117,7 +117,7 @@
                     </div>
 
                     <!-- 1 stars and up -->
-                    <div class="ratings" id="rating1">
+                    <div class="ratings" id="1">
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
@@ -126,6 +126,15 @@
                         <span> & Up</span>
                     </div>
 
+
+                    <h3> By Price</h3>
+                    <ul class="filterCategory">
+                        <li class='priceFilter' id='1000'>Under 1000</li>
+                        <li class='priceFilter' id='500'>Under 500</li>
+                        <li class='priceFilter' id='100'>Under 100</li>
+                        <li class='priceFilter' id='50'>Under 50</li>
+                        <li class='priceFilter' id='10'>Under 10</li>
+                    </ul>
                 </div>
 
             </div>
@@ -181,27 +190,51 @@
 
             console.log(ecommerceApp.displayedProducts)
 
-            // products that have a rating greater than 4
-            document.getElementById('rating4').addEventListener('click', function() {
-                ecommerceApp.filterByRating(ecommerceApp.displayedProducts, 4); 
-            });
+            // // products that have a rating greater than 4
+            // document.getElementById('rating4').addEventListener('click', function() {
+            //     ecommerceApp.filterByRating(ecommerceApp.displayedProducts, 4, ecommerceApp.currentFilter.currentPrice); 
+            // });
 
-            // products that have a rating greater than 3
-            document.getElementById('rating3').addEventListener('click', function() {
-                ecommerceApp.filterByRating(ecommerceApp.displayedProducts, 3);
-            });
+            // // products that have a rating greater than 3
+            // document.getElementById('rating3').addEventListener('click', function() {
+            //     ecommerceApp.filterByRating(ecommerceApp.displayedProducts, 3, ecommerceApp.currentFilter.currentPrice);
+            // });
 
-            // products that have a rating greater than 2
-            document.getElementById('rating2').addEventListener('click', function() {
-                ecommerceApp.filterByRating(ecommerceApp.displayedProducts, 2);
-            });
+            // // products that have a rating greater than 2
+            // document.getElementById('rating2').addEventListener('click', function() {
+            //     ecommerceApp.filterByRating(ecommerceApp.displayedProducts, 2, ecommerceApp.currentFilter.currentPrice);
+            // });
 
-            // products that have a rating greater than 1
-            document.getElementById('rating1').addEventListener('click', function() {
-                ecommerceApp.filterByRating(ecommerceApp.displayedProducts, 1);
-            });
+            // // products that have a rating greater than 1
+            // document.getElementById('rating1').addEventListener('click', function() {
+            //     ecommerceApp.filterByRating(ecommerceApp.displayedProducts, 1, ecommerceApp.currentFilter.currentPrice);
+            // });
 
+            document.querySelectorAll('.ratings').forEach(rating => {
+                rating.addEventListener('click', () => {
+                    document.querySelectorAll('.ratings').forEach(liColoring => {
+                        if (liColoring.classList.contains('underline')) {
+                            liColoring.classList.remove('underline')
+                        }
+                    })
+                    rating.classList.add('underline')
+                    ecommerceApp.filterByRating(ecommerceApp.displayedProducts, rating.id, ecommerceApp.currentFilter.currentPrice);
+                })
+            })
 
+            document.querySelectorAll('.priceFilter').forEach( price => {
+                
+                price.addEventListener('click', () => {
+                    document.querySelectorAll('.priceFilter').forEach(liColoring => {
+                        if (liColoring.classList.contains('underline')) {
+                            liColoring.classList.remove('underline')
+                        }
+                    })
+
+                    price.classList.add('underline')
+                    ecommerceApp.filterByRating(ecommerceApp.displayedProducts, ecommerceApp.currentFilter.currentRating, price.id)
+                })
+            })
 
 
 
