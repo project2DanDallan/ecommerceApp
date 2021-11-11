@@ -87,25 +87,63 @@ section.products {
             a {
                 display:flex;
                 flex-direction: column;
-                justify-content: space-between;
                 height: 100%;
 
-                div:first-child {
-                   
-                    .productImage {
+                
+                    
+                    div.productImage {
+                        height: 15.625em;
+                        padding:0;
                         height:50%;
                         display:flex;
                         justify-content: center;
+                        
                         img {
                             max-height:100%;
                         }
                     }
 
-                }
-                div:last-child {
-                   
-                    
-                }
+                    div.productCardContainer {
+                        margin-top:1em;
+                        display:flex;
+                        flex-direction: column;
+                        flex-grow: 1;
+                        justify-content: space-between;
+
+                        div.productTitle, div.productPrice, div.productRating {
+                            padding:0;
+                        }
+
+                        div.productTitle {
+                            font-size:1.25rem;
+                            line-height: 1.25rem;
+                            letter-spacing: 0.75px;
+                            margin-bottom:1em;
+                        }
+
+                        div.cardRatePriceContainer {
+                            padding:0;
+                            display:flex;
+                            flex-direction: column;
+                            font-size:1.25rem;
+
+                            div.productRating {
+                                font-size:1rem;
+                                line-height:1rem;
+                                letter-spacing:0.75px;
+                                margin-bottom:1em; 
+                            }
+
+                            div.productPrice {
+                                font-size:1.5rem;
+                                line-height:1rem;
+                                font-weight: bold;
+                                letter-spacing:0.75px;
+                                margin-bottom:1em; 
+                            }
+                        }
+                    }
+
             }
         }
     }

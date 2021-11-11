@@ -107,6 +107,10 @@ ecommerceApp.displayProducts = function(productArray, getUrl = null) {
         cardTitle.classList.add('productTitle');
         cardTitle.innerText = elem.title;
 
+        // product card rating and price container
+        const cardRatePrice = document.createElement('div');
+        cardRatePrice.classList.add('cardRatePriceContainer');
+
         // product card rating
         const cardRating = document.createElement('div');
         cardRating.classList.add('productRating');
@@ -121,8 +125,9 @@ ecommerceApp.displayProducts = function(productArray, getUrl = null) {
         cardLink.appendChild(cardImageContainer);
         cardImageContainer.appendChild(cardImage)
         cardContentContainer.appendChild(cardTitle)
-        cardContentContainer.appendChild(cardRating)
-        cardContentContainer.appendChild(cardPrice)
+        cardRatePrice.appendChild(cardRating)
+        cardRatePrice.appendChild(cardPrice)
+        cardContentContainer.appendChild(cardRatePrice)
         cardLink.appendChild(cardContentContainer)
 
         cardContainer.appendChild(cardLink);
