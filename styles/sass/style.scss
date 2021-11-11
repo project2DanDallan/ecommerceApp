@@ -7,7 +7,7 @@
 /* Page container */
 .container {
     display: grid;
-    grid-template-columns:1fr calc(min(1440px, 100%)) 1fr;
+    grid-template-columns:1fr calc(min(1250px, 100%)) 1fr;
 }
 .container > section, .container > div {
     grid-column: 2;

@@ -56,11 +56,12 @@ img {
 // h2 container
 
 .h2Container {
-    padding-bottom: 50px;
+    padding: 50px 0;
     h2 {
         text-align: center;
-        font-size: 64px;
+        @include openSans(64px, 4rem, normal, $charcoal, "normal");
         position: relative;
+        
     }
 
     h2::after {
@@ -69,7 +70,7 @@ img {
         height: 10px;
         background-color:rgb(111, 231, 231);
         position: absolute;
-        bottom : -55%;
+        bottom : -50%;
         left: 40%;
 
     }
