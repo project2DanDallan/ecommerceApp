@@ -75,6 +75,7 @@ section.products {
         display:grid;
         grid-template-columns: repeat(3,1fr);
         gap:2em;
+        grid-auto-rows: 1fr;
 
         div {
             background-color: white;
@@ -94,7 +95,7 @@ section.products {
                     div.productImage {
                         height: 15.625em;
                         padding:0;
-                        height:50%;
+                        // height:50%;
                         display:flex;
                         justify-content: center;
                         
