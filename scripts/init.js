@@ -98,6 +98,10 @@ ecommerceApp.displayProducts = function(productArray, getUrl = null) {
         cardImageContainer.classList.add('productImage');
         cardImageContainer.appendChild(cardImage);
         
+        // product card content
+        const cardContentContainer = document.createElement('div');
+        cardContentContainer.classList.add('productCardContainer');
+
         // product card title
         const cardTitle = document.createElement('div');
         cardTitle.classList.add('productTitle');
@@ -116,9 +120,10 @@ ecommerceApp.displayProducts = function(productArray, getUrl = null) {
         // appending the newly created elements to the card containers
         cardLink.appendChild(cardImageContainer);
         cardImageContainer.appendChild(cardImage)
-        cardLink.appendChild(cardTitle)
-        cardLink.appendChild(cardRating)
-        cardLink.appendChild(cardPrice)
+        cardContentContainer.appendChild(cardTitle)
+        cardContentContainer.appendChild(cardRating)
+        cardContentContainer.appendChild(cardPrice)
+        cardLink.appendChild(cardContentContainer)
 
         cardContainer.appendChild(cardLink);
         // appending the newly created elements to to related products container

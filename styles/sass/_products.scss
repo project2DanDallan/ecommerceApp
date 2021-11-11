@@ -6,13 +6,66 @@ section.products {
     grid-template-columns: 1fr 3fr;
     gap:1em;
 
+
+
     .filterPanel {
         // background:blue;
         // position:relative;
         .filterSettings {
-            border-radius: 10px;
-            background-color: #ccc;
+            padding:1em;
+            display:flex;
+            flex-direction: column;
+            align-items: flex-start;
+            h2 {
+                // font-family: 'Montserrat', sans-serif;
+                @include openSans(1.5rem, 1.5rem, 0.3px, $charcoal);
+                margin-bottom:.75em;
+                // letter-spacing: 1px;
+            }
+            h3 {
+                @include openSans(1.25rem, 1.25rem, 0.3px, $charcoal, 'normal');
+                margin-left:.33em;
+            }
+
+            ul {
+                list-style: none;
+                margin:0;
+                padding:0;
+                li {
+                    margin:1em;
+                }
+                margin-bottom:1.5em;
+            }
             // position: fixed;
+            div.ratings {
+                color:#333;
+                display:flex;
+                flex-direction: row;
+                align-content: flex-start;
+                .checked {
+                    color:goldenrod;
+                }
+                margin:1em;
+            }
+            .underline {
+                position: relative;
+            }
+            .underline::before {
+                // border:2px orange solid;
+                content: '';
+                position: absolute;
+                background:purple;
+                height:100%;
+                width:125%;
+                // top:0;
+                // right:0;
+                left:-.5em;
+                bottom:0;
+                z-index:-1;
+                opacity: .2;
+
+                clip-path: polygon(100% 33%, 95% 92%, 0 100%, 5% 44%);            }
+            
         }
     }
 
@@ -20,30 +73,39 @@ section.products {
 
     .productListings {
         display:grid;
-    grid-template-columns: repeat(3,1fr);
-    background:palegreen;
-    gap:1em;
-    padding:1em;
+        grid-template-columns: repeat(3,1fr);
+        gap:2em;
 
-    div {
-        background-color: paleturquoise;
-        padding:1em;
-    }
-    }
+        div {
+            background-color: white;
+            border-radius: 10px;
+            padding:1em;
+            
+            display:flex;
+            flex-direction: column;
+            a {
+                div:first-child {
+                    background:blue;
+                    .productImage {
+                        height:50%;
+                        display:flex;
+                        justify-content: center;
+                        img {
+                            max-height:100%;
+                        }
+                    }
 
-
-    .filterSettings {
-        div.ratings {
-            color:#333;
-            .checked {
-                color:goldenrod;
+                }
+                div:last-child {
+                    background:red
+                    
+                }
             }
         }
-
-        .underline {
-            border:2px orange solid;
-        }
     }
+
+
+    
 
 
     

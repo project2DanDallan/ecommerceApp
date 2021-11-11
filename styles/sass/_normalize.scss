@@ -3,6 +3,12 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 a {
     text-decoration: none;
     color:inherit;
+   
+}
+
+body {
+    background-color: #ccc;
+    // background-image: -webkit-linear-gradient(-80deg, skyblue 15%, #FFFAFA 85%);
 }
 img {
     display:block;
@@ -11,4 +17,28 @@ img {
 h1, h2, h3 {
     margin:0;
     padding:0;
+}
+
+// colors
+$charcoal: #333;
+
+/* Text style catalog */
+@mixin openSans($fontSize, $lineHeight, $letterSpacing, $color, $style:"") {
+    font-family: 'Open Sans', sans-serif;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    letter-spacing: $letterSpacing;
+    @if $style == "" {
+        // font-weight:bold;
+        font-weight:bold; 
+    } 
+    @if $style == "normal" {
+        // font-weight:bold;
+        font-weight:normal; 
+    }
+    color: $color;
+}
+
+* {
+    @include openSans(1rem, 1rem, 0.3px, $charcoal, "normal");
 }

@@ -7,7 +7,7 @@
 /* Page container */
 .container {
     display: grid;
-    grid-template-columns:1fr calc(min(1170px, 100%)) 1fr;
+    grid-template-columns:1fr calc(min(1440px, 100%)) 1fr;
 }
 .container > section, .container > div {
     grid-column: 2;
@@ -29,6 +29,10 @@ header.topbar {
     grid-template-columns: 1fr 12fr 1fr;
     justify-items: center;
     font-size: 3rem;
+
+    .logoImage {
+        max-height:60px;
+    }
     
     // nav menu
     div:first-child {
@@ -182,15 +186,14 @@ section.product {
     grid-template-columns: 1.5fr 1fr;
     gap:3em;
     padding:2em;
-    div {
-        
-    }
+    
     article {
         display:flex;
         flex-direction: column;
         * {
             margin:.5em 0;
         }
+        .product
         .productDesc {
             letter-spacing: 1px;
             line-height: 1.5rem;
