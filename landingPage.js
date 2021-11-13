@@ -6,7 +6,6 @@
 //queryselect by specific class 
 ecommerceApp.categories = document.querySelectorAll('.categoryLink')
 ecommerceApp.heroButton = document.querySelector('.pseudoButton')
-
 //function to add the link event listener to each of the 4 images
 ecommerceApp.addLinks = () => {
     ecommerceApp.categories.forEach(item => {
@@ -54,20 +53,7 @@ const p = document.querySelector('.testCategory .section1 p')
 p.style.left = `${section1Width}px`;
 
 
-// //rotating button functionality
-// const button = document.querySelector('.coolLoader')
-// const toggleRotate = function() {
-//     const border = document.querySelector('.buttonBorder')
-//     border.classList.toggle('rotate')
-// }
-// button.addEventListener('mouseover', function() {
-//     const border = document.querySelector('.buttonBorder')
-//     border.classList.toggle('rotate')
-// })
-// button.addEventListener('mouseout', function() {
-//     const border = document.querySelector('.buttonBorder')
-//     border.classList.toggle('rotate')
-// })
+
 
 
 

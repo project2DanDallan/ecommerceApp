@@ -114,7 +114,7 @@ ecommerceApp.displayProducts = function(productArray, getUrl = null) {
         // product card rating
         const cardRating = document.createElement('div');
         cardRating.classList.add('productRating');
-        cardRating.innerText = `${elem['rating'].rate} (${elem['rating'].count} reviews)`;
+        cardRating.innerText = `${elem['rating'].rate} (${elem['rating'].count} ratings)`;
         
         // product card price
         const cardPrice = document.createElement('div');
