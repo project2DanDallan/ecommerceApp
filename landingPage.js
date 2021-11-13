@@ -5,7 +5,10 @@
 
 //queryselect by specific class 
 ecommerceApp.categories = document.querySelectorAll('.categoryLink')
+
 ecommerceApp.heroButton = document.querySelector('.pseudoButton')
+
+
 //function to add the link event listener to each of the 4 images
 ecommerceApp.addLinks = () => {
     ecommerceApp.categories.forEach(item => {
@@ -15,10 +18,6 @@ ecommerceApp.addLinks = () => {
             console.log(id)
             window.location.assign(`products.html?category=${id}`)
         })
-    })
-
-    ecommerceApp.heroButton.addEventListener('click', function() {
-        window.location.assign(`products.html`)
     })
 }
 
@@ -51,9 +50,6 @@ const section1Width= document.querySelector(".testCategory .section1").offsetWid
 console.log(section1Width)
 const p = document.querySelector('.testCategory .section1 p')
 p.style.left = `${section1Width}px`;
-
-
-
 
 
 
