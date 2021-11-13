@@ -238,20 +238,18 @@ h1, h2, h3 {
 
 body.landingPage {
   background-color: mintcream;
-  background-image: -webkit-linear-gradient(-80deg, mintcream 50%, #b0e0e6 50%);
+  background-image: -webkit-linear-gradient(-80deg, mintcream 50%, #FFFAFA 50%);
 }
 
 img {
   max-width: 100%;
   display: block;
+  margin: auto;
 }
 
 .featuredProduct {
   background-color: #E4E4E4;
-  background-image: url("../assets/heroImage.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 500px;
+  height: 400px;
   position: relative;
 }
 .featuredProduct .iconContainer {
@@ -265,6 +263,12 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.featuredProduct .left {
+  left: 2%;
+}
+.featuredProduct .right {
+  right: 2%;
 }
 .featuredProduct .featuredProductText {
   margin: 0 auto;
@@ -280,14 +284,8 @@ img {
 .featuredProduct .featuredProductText > * {
   padding-left: 40px;
 }
-.featuredProduct .featuredProductText h1 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 4rem;
-  line-height: 4rem;
-  letter-spacing: 0.3px;
-  color: white;
-  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-  margin-left: 35px;
+.featuredProduct .featuredProductText h2 {
+  text-align: center;
 }
 
 .h2Container {
@@ -338,10 +336,35 @@ img {
   left: 1px;
 }
 
+.rotate {
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
 .buttonContainer2 {
   position: relative;
   z-index: 1;
-  height: 50px;
 }
 
 .pseudoButton {
@@ -350,9 +373,6 @@ img {
   background-color: darkslateblue;
   color: white;
   height: 40px;
-  width: 180px;
-  top: 50%;
-  left: 5%;
 }
 
 .pseudoButton::before {
@@ -489,9 +509,6 @@ img {
 .galleryGrid .gridItem, .galleryGrid .gridItem1 {
   aspect-ratio: 1;
 }
-.galleryGrid .gridItem img, .galleryGrid .gridItem1 img {
-  width: 100%;
-}
 .galleryGrid .gridItem1 {
   grid-row-start: span 2;
   grid-column-start: span 2;
@@ -512,20 +529,14 @@ img {
   opacity: 0.7;
 }
 .galleryGrid .computerText {
-  font-family: "Open Sans", sans-serif;
-  font-size: 64px;
-  line-height: 4rem;
-  letter-spacing: normal;
-  font-weight: normal;
-  color: #333;
   position: absolute;
   bottom: 5%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  width: 100%;
   text-align: center;
+  font-size: 35px;
   color: white;
   font-weight: bold;
+  background-color: rgba(72, 61, 139, 0.4);
 }
 
 .newReleases {
@@ -535,8 +546,7 @@ img {
   margin: 10px 0px;
 }
 .newReleases > div {
-  border-radius: 10%;
-  background-color: white;
+  border: 1px green solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -544,14 +554,11 @@ img {
       -ms-flex-align: center;
           align-items: center;
 }
-.newReleases img {
-  border-radius: 10%;
-  width: 80%;
-  margin: auto;
-}
 
 footer {
+  margin-top: 4em;
   background-color: darkslateblue;
+  color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -568,11 +575,6 @@ footer > * {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-}
-footer > form {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
 }
 footer ul {
   list-style: none;
@@ -595,26 +597,17 @@ footer .formFlex {
 footer .formFlex > * {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
-  line-height: 1rem;
-  letter-spacing: normal;
-  font-weight: normal;
-  color: #333;
-}
-footer .formFlex input, footer .formFlex button {
-  height: 45px;
 }
 footer p {
   text-align: center;
 }
-footer li, footer p {
-  font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
-  line-height: 1rem;
-  letter-spacing: normal;
-  font-weight: normal;
-  color: white;
+
+.section123 {
+  overflow: hidden;
+  width: 50%;
+}
+.section123 img {
+  min-height: 100%;
 }
 
 .testCategory {
@@ -627,8 +620,6 @@ footer li, footer p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   height: 400px;
 }
 .testCategory .section2, .testCategory .section1 {
@@ -678,117 +669,426 @@ footer li, footer p {
           clip-path: polygon(0 0, 100% 0, 100% 100%, calc(0% + 7vh) 100%);
 }
 
-@media (max-width: 900px) {
-  .galleryGrid {
+section.product {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3em;
+  padding: 2em;
+  background: white;
+}
+section.product div.image {
+  max-width: 75%;
+  margin: 0 auto;
+}
+section.product article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+section.product article * {
+  margin: 0.5em 0;
+}
+section.product article div.productDesc {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: normal;
+  color: #333;
+}
+section.product h1.productTitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.3px;
+  font-weight: normal;
+  color: #333;
+  margin-bottom: 1em;
+}
+section.product div.productRating {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.3px;
+  font-weight: normal;
+  color: #333;
+}
+section.product h2.productPrice {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.3px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.75em;
+  margin-bottom: 1.5em;
+}
+section.product h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.3px;
+  font-weight: normal;
+  color: #333;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+}
+section.product button.addTo {
+  border: none;
+  padding: 1em 2em;
+  background: #999;
+  cursor: pointer;
+}
+section.product button.addTo:hover {
+  background: #ccc;
+}
+
+.relatedProductsBG {
+  background-color: #ccc;
+}
+
+.greybg {
+  background: grey;
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+  section.product {
     grid-template-columns: 1fr;
-    width: 80%;
-    margin: 0 auto;
   }
-  .galleryGrid .gridItem {
+}
+section.relatedProducts {
+  margin: 5em 0;
+}
+section.relatedProducts h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.3px;
+  font-weight: normal;
+  color: #333;
+  margin-bottom: 0.75em;
+  text-align: center;
+  margin-bottom: 2.5em;
+}
+section.relatedProducts .products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  grid-auto-rows: 1fr;
+  width: 75%;
+  margin: 0 auto;
+}
+section.relatedProducts .products div {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1em;
+}
+section.relatedProducts .products div a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+section.relatedProducts .products div a div.productImage {
+  height: 15.625em;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+section.relatedProducts .products div a div.productImage img {
+  max-height: 100%;
+}
+section.relatedProducts .products div a div.productCardContainer {
+  margin-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+section.relatedProducts .products div a div.productCardContainer div.productTitle, section.relatedProducts .products div a div.productCardContainer div.productPrice, section.relatedProducts .products div a div.productCardContainer div.productRating {
+  padding: 0;
+}
+section.relatedProducts .products div a div.productCardContainer div.productTitle {
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.75px;
+  margin-bottom: 1em;
+}
+section.relatedProducts .products div a div.productCardContainer div.cardRatePriceContainer {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 1.25rem;
+}
+section.relatedProducts .products div a div.productCardContainer div.cardRatePriceContainer div.productRating {
+  font-size: 1rem;
+  line-height: 1rem;
+  letter-spacing: 0.75px;
+  margin-bottom: 1em;
+}
+section.relatedProducts .products div a div.productCardContainer div.cardRatePriceContainer div.productPrice {
+  font-size: 1.5rem;
+  line-height: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.75px;
+  margin-bottom: 1em;
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+  section.relatedProducts .products {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 600px) {
+  section.relatedProducts .products {
+    grid-template-columns: 1fr;
+  }
+}
+/* header stuff */
+header.topbar {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr 12fr 1fr;
+  justify-items: center;
+  font-size: 3rem;
+}
+header.topbar .logoImage {
+  max-height: 60px;
+}
+@media screen and (max-width: 660px) {
+  header.topbar .hideLogo {
     display: none;
   }
-
-  .newReleases {
-    width: 80%;
-    margin: 10px auto;
-    grid-template-columns: 100%;
-  }
-  .newReleases > * {
-    margin: 0 auto;
-    width: 100%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .newReleases > * > .gridItem2 {
-    padding: 20px 0px;
-  }
-
-  .featuredProduct .featuredProductText h1 {
-    font-size: 3rem;
-  }
-
-  footer > * {
-    min-width: 50%;
-    text-align: center;
-  }
-  footer p {
-    min-width: 100%;
-  }
 }
-@media (max-width: 840px) {
-  .h2Container > h2 {
-    font-size: 50px;
-  }
+header.topbar .icon {
+  color: #303259;
+  cursor: pointer;
+  text-align: center;
 }
-@media (max-width: 660px) {
-  .testCategory {
-    height: 800px;
-  }
-  .testCategory > .section1, .testCategory .section2 {
-    height: 400px;
-    -webkit-box-flex: 100%;
-        -ms-flex: 100%;
-            flex: 100%;
-    width: 80%;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-  .testCategory .section1:hover, .testCategory .section2:hover {
-    -webkit-box-flex: 100%;
-        -ms-flex: 100%;
-            flex: 100%;
-  }
-
-  .h2Container > h2 {
-    font-size: 40px;
-  }
-
-  .featuredProduct .featuredProductText h1 {
-    font-size: 2.5rem;
-  }
+header.topbar .icon i {
+  font-size: 3rem;
 }
-@media (max-width: 440px) {
-  footer > * {
-    min-width: 100%;
-    text-align: left;
-  }
-  footer p {
-    min-width: 100%;
-  }
-  footer .formFlex {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  footer .formFlex .formContainer, footer .formFlex button {
-    width: 80%;
-  }
-  footer .formFlex input {
-    width: 100%;
-    -webkit-box-flex: 90%;
-        -ms-flex: 90%;
-            flex: 90%;
-  }
-
-  .h2Container > h2 {
-    font-size: 50px;
-  }
+header.topbar .icon:hover {
+  color: black;
 }
-section.products {
+header.topbar .navMenu, header.topbar .cartMenu {
+  display: none;
+}
+header.topbar .navMenu {
+  left: 0;
+  -webkit-animation-name: slideInFromLeft;
+          animation-name: slideInFromLeft;
+}
+header.topbar .cartMenu {
+  right: 0;
+  -webkit-animation-name: slideInFromRight;
+          animation-name: slideInFromRight;
+}
+header.topbar .cartMenu .menuContent div:first-child {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+header.topbar .flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-section.products .productListings {
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
+header.topbar .animation {
+  -webkit-animation-name: slideInFromLeft;
+          animation-name: slideInFromLeft;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
-section.products .filterPanel {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  margin-right: 1em;
+header.topbar .menu {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  height: 100%;
+  font-size: 2rem;
+}
+header.topbar .menu .right {
+  grid-template-columns: 1fr 4fr;
+  text-align: left;
+}
+header.topbar .menu .left {
+  grid-template-columns: 4fr 1fr;
+  text-align: right;
+}
+header.topbar .menu .menuContent {
+  background: turquoise;
+  width: 50%;
+  padding: 2em;
+  display: grid;
+}
+header.topbar .menu .menuContent div.menuLinks a, header.topbar .menu .menuContent div.menuLinks span {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.3px;
+  font-weight: normal;
+  color: white;
+}
+header.topbar .menu .menuContent div.menuLinks div.menuLogo {
+  margin-bottom: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  text-align: left;
+}
+header.topbar .menu .menuContent div.menuLinks div.menuLogo img {
+  margin: 0;
+}
+header.topbar .menu .menuContent div:nth-child(2) {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+header.topbar .menu .menuOverlay {
+  width: 50%;
+  background-color: #303259;
+  opacity: 0;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@media screen and (max-width: 940px) {
+  header.topbar .menu .menuOverlay {
+    display: none;
+  }
+  header.topbar .menu .menuContent {
+    width: 100%;
+  }
+}
+header.topbar .menu .order {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+header.topbar .menu a, header.topbar .menu span {
+  margin-bottom: 0.5em;
+}
+
+i.fa-times {
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+}
+
+i.fa-times:hover {
+  color: white;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+@-webkit-keyframes slideInFromLeft {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@-webkit-keyframes slideInFromRight {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+section.products {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1em;
+}
+section.products .filterPanelMobile {
+  display: none;
 }
 section.products .filterPanel .filterSettings {
   padding: 1em;
@@ -803,15 +1103,6 @@ section.products .filterPanel .filterSettings {
       -ms-flex-align: start;
           align-items: flex-start;
 }
-section.products .filterPanel .filterSettings h2 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  letter-spacing: 0.3px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 0.75em;
-}
 section.products .filterPanel .filterSettings h3 {
   font-family: "Open Sans", sans-serif;
   font-size: 1.25rem;
@@ -820,6 +1111,19 @@ section.products .filterPanel .filterSettings h3 {
   font-weight: normal;
   color: #333;
   margin-left: 0.33em;
+}
+section.products .filterPanel .filterSettings h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.33rem;
+  line-height: 1.33rem;
+  letter-spacing: 0.3px;
+  font-weight: normal;
+  color: #333;
+  margin-left: 0.33em;
+  margin-bottom: 1em;
+}
+section.products .filterPanel .filterSettings .ratingsContainer {
+  margin-bottom: 1em;
 }
 section.products .filterPanel .filterSettings ul {
   list-style: none;
@@ -867,7 +1171,6 @@ section.products .productListings {
   grid-template-columns: repeat(3, 1fr);
   gap: 2em;
   grid-auto-rows: 1fr;
-  align-self: flex-start;
 }
 section.products .productListings div {
   background-color: white;
@@ -947,6 +1250,68 @@ section.products .productListings div a div.productCardContainer div.cardRatePri
   margin-bottom: 1em;
 }
 
+@media screen and (max-width: 900px) {
+  section.products {
+    padding: 1em;
+  }
+  section.products .productListings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 705px) {
+  section.products {
+    padding: 1em;
+    grid-template-columns: 1fr;
+  }
+  section.products .productListings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 450px) {
+  section.products {
+    grid-template-columns: 1fr;
+    padding: 1em;
+  }
+  section.products .productListings {
+    display: grid;
+    grid-template-columns: 1fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+@media screen and (max-width: 705px) {
+  .filterPanel {
+    position: fixed;
+    left: -205px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    z-index: 1;
+    text-decoration: none;
+    border-radius: 0 5px 5px 0;
+    background: #999;
+    opacity: 0.95;
+  }
+
+  .filterPanel::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: -60px;
+    top: 15px;
+    border-top: 30px solid transparent;
+    border-left: 60px solid #999;
+    border-bottom: 30px solid transparent;
+    opacity: 1;
+  }
+
+  .filterPanel:hover {
+    left: 0;
+  }
+}
 /* Page container */
 .container {
   display: grid;
@@ -964,247 +1329,4 @@ section.products .productListings div a div.productCardContainer div.cardRatePri
 
 .testbg {
   background: white;
-}
-
-/* header stuff */
-header.topbar {
-  padding: 1em;
-  display: grid;
-  grid-template-columns: 1fr 12fr 1fr;
-  justify-items: center;
-  font-size: 3rem;
-}
-header.topbar .logoImage {
-  max-height: 60px;
-}
-header.topbar .icon {
-  color: #303259;
-  font-size: 4rem;
-  cursor: pointer;
-  text-align: center;
-}
-header.topbar .icon:hover {
-  color: black;
-}
-header.topbar .navMenu, header.topbar .cartMenu {
-  display: none;
-}
-header.topbar .navMenu {
-  left: 0;
-  -webkit-animation-name: slideInFromLeft;
-          animation-name: slideInFromLeft;
-}
-header.topbar .cartMenu {
-  right: 0;
-  -webkit-animation-name: slideInFromRight;
-          animation-name: slideInFromRight;
-}
-header.topbar .cartMenu .menuContent div:first-child {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-}
-header.topbar .flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-header.topbar .animation {
-  -webkit-animation-name: slideInFromLeft;
-          animation-name: slideInFromLeft;
-  -webkit-animation-duration: 300ms;
-          animation-duration: 300ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-header.topbar .menu {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 100;
-  font-size: 1.5rem;
-  -webkit-animation-duration: 300ms;
-          animation-duration: 300ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  height: 100%;
-}
-header.topbar .menu .menuContent {
-  background: turquoise;
-  width: 50%;
-  padding: 2em;
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  text-align: left;
-}
-header.topbar .menu .menuContent div:nth-child(2) {
-  font-family: "DM Sans", sans-serif;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  color: white;
-  font-size: 2em;
-}
-header.topbar .menu .menuOverlay {
-  width: 50%;
-  background-color: #303259;
-  opacity: 0;
-  -webkit-animation-name: fadeIn;
-          animation-name: fadeIn;
-  -webkit-animation-delay: 200ms;
-          animation-delay: 200ms;
-  -webkit-animation-duration: 300ms;
-          animation-duration: 300ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-header.topbar .menu .order {
-  -webkit-box-ordinal-group: 0;
-      -ms-flex-order: -1;
-          order: -1;
-}
-header.topbar .menu a, header.topbar .menu span {
-  margin-bottom: 0.5em;
-}
-
-i.fa-times {
-  -webkit-transition: -webkit-transform 300ms ease-in-out;
-  transition: -webkit-transform 300ms ease-in-out;
-  transition: transform 300ms ease-in-out;
-  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
-}
-
-i.fa-times:hover {
-  color: white;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-@-webkit-keyframes slideInFromLeft {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 0;
-  }
-}
-
-@keyframes slideInFromLeft {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 0;
-  }
-}
-@-webkit-keyframes slideInFromRight {
-  0% {
-    right: -100%;
-  }
-  100% {
-    right: 0;
-  }
-}
-@keyframes slideInFromRight {
-  0% {
-    right: -100%;
-  }
-  100% {
-    right: 0;
-  }
-}
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-section.product {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 3em;
-  padding: 2em;
-}
-section.product article {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-section.product article * {
-  margin: 0.5em 0;
-}
-section.product article .product .productDesc {
-  letter-spacing: 1px;
-  line-height: 1.5rem;
-}
-section.product button.addTo {
-  border: none;
-  padding: 1em 2em;
-  background: #999;
-  cursor: pointer;
-}
-section.product button.addTo:hover {
-  background: #ccc;
-}
-
-section.relatedProducts {
-  background: #ccc;
-}
-section.relatedProducts h2 {
-  text-align: center;
-}
-section.relatedProducts .products {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2em;
-  padding: 1em;
-}
-section.relatedProducts .products div {
-  background: white;
-  padding: 1em;
-  border-radius: 10px;
-}
-section.relatedProducts .products div .productTitle {
-  font-size: 1.25rem;
-}
-section.relatedProducts .products div .productImage {
-  height: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-section.relatedProducts .products div .productImage img {
-  max-height: 100%;
-}
-
-.relatedProductsBG {
-  background-color: #ccc;
-}
-
-.greybg {
-  background: grey;
 }

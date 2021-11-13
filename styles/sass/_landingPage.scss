@@ -2,8 +2,11 @@
 body.landingPage {
     // background-color: mintcream;
     background-color: mintcream;
-    background-image: -webkit-linear-gradient(-80deg, mintcream 50%, #b0e0e6 50%);
-    // background-color: #b0e0e6;
+    background-image: -webkit-linear-gradient(-80deg, mintcream 50%, #FFFAFA 50%);
+
+   
+
+    
 }
 
 
@@ -11,22 +14,15 @@ img {
     // width: 100%;
     max-width: 100%;
     display: block;
-    // margin: auto;
+    margin: auto;
 } 
-
-
 
 
 //Header of Landing Page
 .featuredProduct {
     background-color: #E4E4E4;
-    background-image: url('../assets/heroImage.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    // background-position-y: -250px;
-    // background-position: fixed;
-
-    height: 500px;
+    
+    height: 400px;
     position: relative;
     .iconContainer {
         font-size: 22px;
@@ -36,7 +32,13 @@ img {
         display:flex;
         align-items: center;
     }
-    
+    .left {
+        left: 2%;
+    }
+
+    .right {
+        right: 2%;
+    }
     .featuredProductText {
         margin: 0 auto;
         width: calc(min(1170px, 100%));
@@ -47,10 +49,8 @@ img {
             
             padding-left: 40px;
         }
-        h1 {
-            @include openSans(4rem, 4rem, 0.3px, white, bold);
-            text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-            margin-left: 35px;
+        h2 {
+            text-align: center;
         }
     }
 }
@@ -112,24 +112,23 @@ img {
 
 
 
-// .rotate {
-//     animation: rotate 2s linear infinite;
-// }
+.rotate {
+    animation: rotate 2s linear infinite;
+}
 
 
-// @keyframes rotate {
-//     0% {
-//         transform: rotate(0deg)
-//     }
-//     100% {
-//         transform: rotate(360deg)
-//     }
-// }
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
 
 .buttonContainer2 {
     position:relative;
     z-index: 1;
-    height: 50px;
 }
 
 .pseudoButton {
@@ -138,10 +137,6 @@ img {
     background-color:darkslateblue;
     color: white;
     height: 40px;
-    width: 180px;
-
-    top: 50%;
-    left: 5%;
     
 }
 .pseudoButton::before {
@@ -267,9 +262,6 @@ img {
     
     .gridItem, .gridItem1{
         aspect-ratio: 1;
-        img {
-            width: 100%;
-        }
     }
 
     .gridItem1 {
@@ -297,16 +289,14 @@ img {
     //     aspect-ratio: 2
     // }
     .computerText {
-        @include openSans(64px, 4rem, normal, $charcoal, "normal");
         position: absolute;
         bottom: 5%;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
+        width:100%;
         text-align:center;
+        font-size: 35px;
         color: white;
         font-weight: bold;
-        // background-color: rgba(72,61,139, 0.4)
+        background-color: rgba(72,61,139, 0.4)
     }
 
     
@@ -320,17 +310,11 @@ img {
     margin: 10px 0px;
 
     > div {
-        
-        border-radius: 10%;
-        background-color: white;
+        border: 1px green solid;
         display:flex;
         align-items: center;
     }
-    img {
-        border-radius: 10%;
-        width: 80%;
-        margin: auto;
-    }
+
 }
 
 
@@ -338,10 +322,11 @@ img {
 // footer
 
 footer {
+
+    margin-top:4em;
     // text-align: center;
     background-color: darkslateblue;
-    
-    // color: white;
+    color: white;
 
     display: flex;
     justify-content: space-around;
@@ -351,9 +336,6 @@ footer {
     > * {
         min-width: 33%;
         flex:1;
-    }
-    > form {
-        flex: 2;
     }
 
     ul {
@@ -373,29 +355,30 @@ footer {
     .formFlex {
         display:flex;
         justify-content: center;
-        
 
         >* {
             margin: 0;
             padding: 0;
-
-            @include openSans(1rem, 1rem, normal, $charcoal, "normal");
-        }
-        input, button {
-            height: 45px;
         }
     }
     
     p {
-        text-align: center;       
+        text-align: center;
+        
     }
-    li, p {
-        @include openSans(1rem, 1rem, normal, white, "normal");
-    }
+
 }
 
 
+.section123 {
+    overflow: hidden;
+    width:50%;
 
+    img {
+        min-height: 100%;
+        
+    }
+}
 
 
 
@@ -405,7 +388,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     height: 400px;
     
     .section2, .section1 {
@@ -460,115 +442,19 @@ footer {
     }
 }
 
+// .testCategory {
+//     pointer-events: none;
+// }
+// .testCategory > * {
+//     pointer-events: auto;
+// }
+// .testCategory:hover > * {
+//     opacity: 0.2;  
+// }
+// .testCategory > *:hover {
+//     opacity: 1;
+// }
 
-
-
-
-
-// @media Queries
-
-@media (max-width : 900px) {
-    
-    .galleryGrid {
-        grid-template-columns: 1fr;
-        width: 80%;
-        margin: 0 auto;
-
-        .gridItem {
-            display: none;
-        }
-    }
-
-    .newReleases{
-        width: 80%;
-        margin: 10px auto;
-        grid-template-columns: 100%;
-        
-        >*{
-            margin: 0 auto;
-            width: 100%;
-            justify-content: center;
-
-            > .gridItem2{
-                padding: 20px 0px;
-            }
-        }
-    }
-    .featuredProduct .featuredProductText h1 {
-        font-size: 3rem;
-    }
-    footer {
-        >* {
-            min-width: 50%;
-            text-align: center;
-        }
-        p {
-            min-width: 100%;
-        }
-    }
-}
-
-
-@media (max-width:840px) {
-    
-    
-    .h2Container>h2 {
-        font-size: 50px;
-    }
-}
-
-@media (max-width: 660px) {
-    .testCategory {
-        height: 800px;
-        >.section1, .section2{
-            height:400px;
-            flex: 100%;
-            width: 80%;
-
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        }
-        .section1:hover, .section2:hover {
-            flex: 100%;
-        }
-    }
-    .h2Container>h2 {
-        font-size: 40px;
-    }
-
-    .featuredProduct .featuredProductText h1 {
-        font-size: 2.5rem;
-    }
-
-
-
-}
-
-
-@media (max-width: 440px) {
-    footer {
-        >* {
-            min-width: 100%;
-            // text-align: center;
-            text-align: left;
-        }
-        p {
-            min-width: 100%;
-        }
-        .formFlex {
-            flex-wrap: wrap;
-            
-            .formContainer,button {
-               
-                width: 80%;
-            }
-            input {
-                width: 100%;
-                flex: 90%;
-            }
-        }
-    }
-    
-    .h2Container>h2 {
-        font-size: 50px;
-    }
-}
+// .left:hover, .right:hover {
+//     opacity: 0.7
+// }
